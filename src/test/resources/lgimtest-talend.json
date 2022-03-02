@@ -1,0 +1,166 @@
+{
+  "version": 6,
+  "entities": [
+    {
+      "entity": {
+        "type": "Project",
+        "id": "4312f410-254c-46bb-83c6-06349de6da45",
+        "name": "LGIM_TEST"
+      },
+      "children": [
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.4",
+              "name": "PUT"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "130"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:8080",
+              "path": "/dispense"
+            },
+            "id": "367f29c3-3e64-41dd-9fbf-f8474cc70074",
+            "name": "Dispense coins",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+              "name": "GET"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:8080",
+              "path": "/currentState"
+            },
+            "id": "6c93568b-052f-4cc5-a43e-87447bc817cc",
+            "name": "Get current state",
+            "headers": []
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"denominations\" : [\n    {\n      \"name\" : \"penny\",\n      \"value\" : 1\n    },\n    {\n      \"name\" : \"tuppence\",\n      \"value\" : 2\n    },\n    {\n      \"name\" : \"fivepence\",\n      \"value\" : 5\n    },\n    {\n      \"name\" : \"tenpence\",\n      \"value\" : 10\n    },\n    {\n      \"name\" : \"twentypence\",\n      \"value\" : 20\n    },\n    {\n      \"name\" : \"fiftypence\",\n      \"value\" : 50\n    },\n    {\n      \"name\" : \"pound\",\n      \"value\" : 100\n    },\n    {\n      \"name\" : \"twopound\",\n      \"value\" : 200\n    }\n  ],\n  \t\"initialCoinAmounts\" : {\n    \t\"penny\" : 30,\n    \t\"tuppence\" : 38,\n      \"fivepence\" : 20,\n      \"tenpence\" : 30,\n      \"twentypence\" : 23,\n      \"fiftypence\" : 16,\n      \"pound\": 11,\n      \"twopound\": 8\n\t}\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:8080",
+              "path": "/initialise"
+            },
+            "id": "a5eb5a74-4c2e-4df2-9eb8-05cadabacbcd",
+            "name": "Initialise coin state",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.4",
+              "name": "PUT"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"addCoinAmounts\" : {\n    \"penny\" : 30,\n    \"tuppence\" : 38\n\t}\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:8080",
+              "path": "/update"
+            },
+            "id": "37bbb63f-59a8-4550-a144-9c9554c0de76",
+            "name": "Update coin state",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
