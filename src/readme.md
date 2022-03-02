@@ -8,7 +8,7 @@ The API has 4 endpoints
 * /initialise - Initialises the in memory state of the vending machine
 * /update - update the state of the vending machine
 * /dispense - dispense coins for the provided value if possible
-* /get - get the current state of the vending machine
+* /currentState - get the current state of the vending machine
 
 To test, please start the application using intellij or other editor start facility, 
 or run a gradle clean build and execute the created jar in the /build/libs directory.
